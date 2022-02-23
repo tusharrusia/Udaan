@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" href="/images/favicon.ico">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="/pages/donorregister.css">
+  <title>Donor Register</title>
+</head>
+<body>
+  
+    <nav class="nav nav_top">
+        <div class="logo">
+            <a href="/"><img src="/images/logo.png" width="250"></a>
+        </div>
+        <div class="nav_side">
+            <a href="/">HOME</a>
+            <a href="/about">ABOUT US</a>
+            <a href="/donorlogin">DONATE</a>
+            <a href="/donorlogin">LOGIN</a>
+        </div>
+    </nav>
+
+    <% if(locals.message) { %>
+
+      <h4 class="alert alert-danger mt-4"><%= message %></h4>
+    
+    <% } %>
+    
+  <div class="container mt-4">
+    <div class="card">
+      <div class="card-header">
+        Donor Register
+      </div>
+      <div class="card-body">
+        <form action="/donor/register" method="POST">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="name">
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" class="form-control" id="email" name="email">
+          </div>
+
+          <div class="form-group">
+            <label for="name">Phone Number</label>
+            <input type="tel" class="form-control" id="name" name="phone">
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" name="password">
+          </div>
+
+          <div class="form-group">
+            <label for="passwordConfirm">Confirm Password</label>
+            <input type="password" class="form-control" id="passwordConfirm" name="passwordConfirm">
+          </div>
+          
+          <button type="submit" class="btn btn-primary">Register donor</button>
+        </form>
+        <div class="card-header"> 
+            Already Registered ? 
+            <a href="/donorlogin"> <button class="btn btn-primary">LOGIN</button> </a>
+          </div>
+      </div>
+    </div>
+
+ 
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" href="/images/favicon.ico">
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="/pages/admindashboard.css">
+<title>Edit</title>
+</head>
+<body>
+
+    <nav class="nav nav_top">
+        <div class="logo">
+            <a href="/"><img src="/images/logo.png" width="250"></a>
+        </div>
+        <div class="nav_side">
+            <a href="/admin/logout">LOGOUT</a>
+        </div>
+    </nav>
+
+    
+    <div class="card-body">
+        <form action="<%=(typeof editData!='undefined')?'/admin/edit/'+editData.id:'/admin/create'%>" method="POST">
+         
+          <div class="form-group">
+            <label for="Name">Name</label>
+            <input type="text" class="form-control" id="name" name="name" required value="<%=(typeof editData!='undefined')? editData.name:''%>">
+          </div>
+
+          <div class="form-group">
+            <label for="post">Post</label>
+            <input type="text" class="form-control" id="post" name="post" required value="<%=(typeof editData!='undefined')? editData.post:''%>">
+          </div>
+
+          <div class="form-group">
+            <label for="force">Force</label>
+            <input type="text" class="form-control" id="force" name="force_name" required value="<%=(typeof editData!='undefined')? editData.force_name:''%>">
+          </div>
+
+          <div class="form-group">
+            <label for="info">Native</label>
+            <input type="text" class="form-control" id="info" name="info" required value="<%=(typeof editData!='undefined')? editData.info:''%>">
+          </div>
+
+          <div class="form-group">
+            <label for="bank">Bank Details</label>
+            <input type="text" class="form-control" id="bank" name="bank" required value="<%=(typeof editData!='undefined')? editData.bank:''%>">
+          </div>
+          
+          <button type="submit" class="btn btn-primary">Edit</button>
+        </form>
+      </div>
+
+        
+</body>
+</html>
+
+

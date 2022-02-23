@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" href="/images/favicon.ico">
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="/pages/admindashboard.css">
+<title><%= title %></title>
+</head>
+<body>
+
+    <nav class="nav nav_top">
+        <div class="logo">
+            <a href="/"><img src="/images/logo.png" width="250"></a>
+        </div>
+        <div class="nav_side">
+            <a href="/admin/logout">LOGOUT</a>
+        </div>
+    </nav>
+
+    <div class="card text-center">
+        <div class="card-header">
+
+        </div>
+        <div class="card-body">
+
+          <a href="/admin/add" class="btn btn-success">Add a Martyr</a>
+        </div>
+        
+        <% if(locals.message) { %>
+
+          <h6 class="alert alert-danger mt-4"><%= message %></h6>
+        
+        <% } %>
+
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">S.No.</th>
+              <th scope="col">Name</th>
+              <th scope="col">Designation</th>
+              <th scope="col">Force</th>
+              <th scope="col">Native</th>
+              <th scope="col">Bank Details</th>
+              <th scope="col">Edit</th>
+              <th scope="col">Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+              <%
+              if(martyrData.length!=0){
+              var i=1;
+              martyrData.forEach(function(data){
+              %>
+            <tr>
+              <th scope="row"><%=i; %></th>
+              <td><%=data.name %></td>
+              <td><%=data.post %></td>
+              <td><%=data.force_name %></td>
+              <td><%=data.info %></td>
+              <td><%=data.bank %></td>
+              <td><a href="/admin/edit/<%=data.id%>"class="btn btn-primary">Edit</a></td>
+              <td><a href="/admin/delete/<%=data.id%>"class="btn btn-danger">Delete</a></td>
+            </tr>
+            <%  i++; }) %>
+            <% } else{ %>
+                <tr>
+                    <td colspan="7">No Data Found</td>
+                </tr>
+            <% } %>
+          </tbody>
+        </table>
+
+        
+</body>
+</html>
+
