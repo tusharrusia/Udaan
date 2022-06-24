@@ -54,7 +54,7 @@ router.post('/order/:id', donor_auth.isLoggedIn, function (req, res, next) {
 				status: response.status
 			}
 
-			db.query('INSERT INTO DonationDetails SET ?', {
+			db.query('INSERT INTO donationdetails SET ?', {
 				donorId: donorId, martyrId: martyrId, orderId: response.id, receiptId: response.receipt, amount: response.amount, currency: response.currency, createdAt: response.created_at,
 				status: response.status
 			}, (error, results) => {
@@ -91,13 +91,13 @@ router.post('/verify', async function (req, res, next) {
 			paymentId: req.body.razorpay_payment_id, signature: req.body.razorpay_signature, status: "paid"
 		}
 
-		db.query(`UPDATE DonationDetails SET ? WHERE orderId= ?`, [verifyDetails, req.body.razorpay_order_id], function (err, data) {
+		db.query(`UPDATE donationdetails SET ? WHERE orderId= ?`, [verifyDetails, req.body.razorpay_order_id], function (err, data) {
 
 			if (err) throw err;
 			console.log(data.affectedRows + " record(s) updated");
 		});
 
-		db.query("SELECT * FROM DonationDetails WHERE orderId= ?", [req.body.razorpay_order_id], function (err, result) {
+		db.query("SELECT * FROM donationdetails WHERE orderId= ?", [req.body.razorpay_order_id], function (err, result) {
 			if (err) throw err;
 			console.log(result);
 
