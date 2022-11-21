@@ -30,7 +30,8 @@ SET time_zone = "+00:00";
 CREATE TABLE `admins` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `email` varchar(100) NOT NULL,
-  `password` varchar(255) NOT NULL
+  `password` varchar(255) NOT NULL,
+   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -52,7 +53,8 @@ CREATE TABLE `donationdetails` (
   `amount` int(100) NOT NULL,
   `currency` varchar(100) NOT NULL,
   `createdAt` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `status` varchar(100) NOT NULL
+  `status` varchar(100) NOT NULL,
+   PRIMARY KEY (`number`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -68,7 +70,8 @@ CREATE TABLE `donors` (
   `name` varchar(100) NOT NULL,
   `phone` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `password` varchar(255) NOT NULL
+  `password` varchar(255) NOT NULL,
+   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -86,40 +89,11 @@ CREATE TABLE `martyrs` (
   `post` varchar(100) NOT NULL,
   `force_name` varchar(100) NOT NULL,
   `info` varchar(100) NOT NULL,
-  `bank` varchar(100) NOT NULL
+  `bank` varchar(100) NOT NULL,
+   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
 
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `admins`
---
-ALTER TABLE `admins`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `donationdetails`
---
-ALTER TABLE `donationdetails`
-  ADD PRIMARY KEY (`number`);
-
---
--- Indexes for table `donors`
---
-ALTER TABLE `donors`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `martyrs`
---
-ALTER TABLE `martyrs`
-  ADD PRIMARY KEY (`id`);
-
---
 
 COMMIT;
 
