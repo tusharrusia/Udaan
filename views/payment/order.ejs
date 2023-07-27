@@ -1,43 +1,56 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" href="/images/favicon.ico">
-	<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title><%- title %></title>
-<!-- Bootstrap CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-</head>
 
-<body>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/pages/donordashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <title>Udaan</title>
+  </head>
+  <body style="background-color: rgb(244, 241, 235);">
+
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <div class="navbar-brand">
+            <img src="/images/udaan White.png" width="120" height="40" class="d-inline-block align-top" alt="">
+        </div>
+      
+    </div>
+  </nav>
+
+    <div class="card text-center" style="background-color: rgb(244, 241, 235);">
+        <div class="card-header">
+          <p class="header"><b>Every donation, regardless of its size, carries significance and makes a difference in supporting meaningful causes.</b></p>
+        </div>      
+      </div>
 
     <div class="wrapper">
-        <!-- Navbar -->
-<nav class="navbar navbar-light mb-5" style="background-color: #22527b;">
-	<div class="container">
-		<a class="navbar-brand mx-auto" href="/">
-			<img src="/images/razorpay-logo-white.svg" alt="logo" class="d-inline-block align-top pull-left">
-		</a>
-	</div>
-</nav>
-		<div class="container">
+		<div class="container payment-form-margin">
 			<main><div class="d-flex justify-content-center">
                 <form method="POST" action="/payment/order/<%=MartyrId%>">
-                    <div class="mb-3">
-                      <label for="amountInput" class="form-label">Enter Amount</label>
+                    <div class="text-center mb-3">
+                      <label for="amountInput" class="form-label header">Enter an amount</label>
                       <input name="amount" type="number" min="1" class="form-control form-control-lg" id="amountInput" aria-describedby="amountHelp" required>
                       <div id="amountHelp" class="form-text"></div>
                     </div>
             
                     <div class="d-grid">
-                        <button type="submit" class="btn btn-primary" id="getOrderIdBtn">Donate</button>
+                        <button type="submit" class="btn btn-success btn-lg btn-block btn-change" >Donate</button>
                     </div>
+                    <div class="text-center" target="_blank"> <img referrerpolicy="origin" src = "https://badges.razorpay.com/badge-dark.png " style = "height: 55px; width: 150px; margin-top: 50px;" alt = "Razorpay | Payment Gateway | Neobank"></div>
                 </form>
             </div></main>			
 		</div>
-        <p class="text-center text-muted mt-5 fixed-bottom">Copyright &copy; 2022 TKI Foundation. All rights reserved.</p>
+              <div class="text-center  fixed-bottom p-4" style="background-color: rgba(0, 0, 0, 0.025);">
+        © 2023 Copyright:
+        Udaan Foundation
+      </div>
     </div>
 </body>
 

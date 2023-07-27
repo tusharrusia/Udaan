@@ -20,8 +20,10 @@ exports.login = async (req, res) => {
       })
     }
 
-    db.query('SELECT * FROM donors WHERE email = ?', [email], async (error, results) => {
+ db.query('SELECT * FROM donors WHERE email = ?', [email], async (error, results) => {
       console.log(results);
+      
+
       if (results.length==0 || !(await bcrypt.compare(password, results[0].password))) {
         res.status(401).render('donor/donorlogin', {
           message: 'Email or Password is incorrect'

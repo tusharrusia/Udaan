@@ -46,6 +46,6 @@ app.use('/admin', require('./routes/admin'));
 app.use('/payment', require('./routes/payment'));
 
 
-  app.listen(2000, () => {
-    console.log("Server started on Port 2000");
+  app.listen(process.env.PORT || 2000, () => {
+    
   })
