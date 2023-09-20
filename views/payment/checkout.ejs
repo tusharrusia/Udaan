@@ -67,9 +67,8 @@
                     const options = {
                         "key": razorpayKeyId,
                         "currency": "INR",
-                        "name": "Razor Tutorial",
-                        "description": "Razor Test Transaction",
-                        "image": "https://previews.123rf.com/images/subhanbaghirov/subhanbaghirov1605/subhanbaghirov160500087/56875269-vector-light-bulb-icon-with-concept-of-idea-brainstorming-idea-illustration-.jpg",
+                        "name": "Udaan Foundation",
+                        "description": "Udaan Martyrs' Family Donation",
                         "order_id": JSON.parse(orderId),
                         "handler": function (response){
                             document.getElementById('razorpay_payment_id').value= response.razorpay_payment_id;
@@ -83,7 +82,7 @@
                             }
                         },
                         "theme": {
-                            "color": "#22527b"
+                            "color": "#343a40"
                         }
                     };
                     const razorpay = new Razorpay(options);
